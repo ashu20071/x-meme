@@ -8,10 +8,10 @@ import javax.validation.constraints.NotEmpty;
 
 public class DWGettingStartedConfiguration extends Configuration {
 
-    @NotEmpty
-    private String template;
+    //@NotEmpty
+    private String template ="Hello, %s!";
 
-    @NotEmpty
+    //@NotEmpty
     private String defaultName = "Stranger";
 
     @JsonProperty
