@@ -25,7 +25,7 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
     @Override
     public void initialize(final Bootstrap<DWGettingStartedConfiguration> bootstrap) {
         // TODO: application initialization
-        bootstrap.addBundle(new AssetsBundle("/assets", "/", "index.html"));
+        //bootstrap.addBundle(new AssetsBundle("/assets", "/", "index.html"));
 
     }
 
@@ -39,7 +39,7 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
                 configuration.getUrl()
         );
         environment.jersey().register(resource);
-        environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
+        //environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
     }
 
 }

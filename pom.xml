@@ -54,7 +54,6 @@
             <artifactId>dropwizard-assets</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
