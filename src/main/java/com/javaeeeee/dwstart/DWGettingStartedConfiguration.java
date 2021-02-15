@@ -9,28 +9,41 @@ import javax.validation.constraints.NotEmpty;
 public class DWGettingStartedConfiguration extends Configuration {
 
     //@NotEmpty
-    private String template ="Hello, %s!";
+    private String name ="Some User";
 
     //@NotEmpty
-    private String defaultName = "Stranger";
+    private String caption = "Some Caption";
+
+    //@NotEmpty
+    private String url = "Some URL";
 
     @JsonProperty
-    public String getTemplate() {
-        return template;
+    public String getUrl() {
+        return url;
     }
 
     @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @JsonProperty
-    public String getDefaultName() {
-        return defaultName;
+    public String getName() {
+        return name;
     }
 
     @JsonProperty
-    public void setDefaultName(String name) {
-        this.defaultName = name;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @JsonProperty
+    public String getCaption() {
+        return caption;
+    }
+
+    @JsonProperty
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
 }

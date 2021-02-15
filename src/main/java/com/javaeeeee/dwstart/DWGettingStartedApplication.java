@@ -1,5 +1,6 @@
 package com.javaeeeee.dwstart;
 
+import com.javaeeeee.dwstart.resources.DbClass;
 import com.javaeeeee.dwstart.resources.XmemeResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -26,8 +27,9 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
                     final Environment environment) {
         // TODO: implement application
         final XmemeResource resource = new XmemeResource(
-                configuration.getTemplate(),
-                configuration.getDefaultName()
+                configuration.getName(),
+                configuration.getCaption(),
+                configuration.getUrl()
         );
         environment.jersey().register(resource);
     }

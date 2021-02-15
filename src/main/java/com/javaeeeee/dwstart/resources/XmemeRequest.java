@@ -3,26 +3,32 @@ package com.javaeeeee.dwstart.resources;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class XmemeRequest {
-    private long id;
-
-    private String content;
+    private String name;
+    private String url;
+    private String caption;
 
     public XmemeRequest() {
         // Jackson deserialization
     }
 
-    public XmemeRequest(long id, String content) {
-        this.id = id;
-        this.content = content;
+    public XmemeRequest(String name, String url, String caption) {
+        this.name = name;
+        this.url = url;;
+        this.caption = caption;
     }
 
     @JsonProperty
-    public long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
     @JsonProperty
-    public String getContent() {
-        return content;
+    public String getUrl() {
+        return url;
+    }
+
+    @JsonProperty
+    public String getCaption() {
+        return caption;
     }
 }
