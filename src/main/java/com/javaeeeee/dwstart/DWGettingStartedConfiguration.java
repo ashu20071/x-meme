@@ -2,11 +2,20 @@ package com.javaeeeee.dwstart;
 
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.dropwizard.bundles.assets.AssetsBundleConfiguration;
+import io.dropwizard.bundles.assets.AssetsConfiguration;
 import org.hibernate.validator.constraints.*;
+
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import javax.validation.constraints.NotEmpty;
 
-public class DWGettingStartedConfiguration extends Configuration {
+public class DWGettingStartedConfiguration extends Configuration implements AssetsBundleConfiguration {
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private final AssetsConfiguration assets = AssetsConfiguration.builder().build();
 
     //@NotEmpty
     private String name ="Some User";
@@ -45,5 +54,10 @@ public class DWGettingStartedConfiguration extends Configuration {
     @JsonProperty
     public void setCaption(String caption) {
         this.caption = caption;
+    }
+
+    @Override
+    public AssetsConfiguration getAssetsConfiguration() {
+        return assets;
     }
 }
