@@ -25,8 +25,8 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
     @Override
     public void initialize(final Bootstrap<DWGettingStartedConfiguration> bootstrap) {
         // TODO: application initialization
-        bootstrap.addBundle(new AssetsBundle("/assets/index", "/index", "index.js"));
-        bootstrap.addBundle(new AssetsBundle("/assets/App.js", "/App", "App.js"));
+        bootstrap.addBundle(new AssetsBundle("/assets", "/", "index.js"));
+        bootstrap.addBundle(new AssetsBundle("/assets/index.js", "/", "App.js"));
     }
 
     @Override
