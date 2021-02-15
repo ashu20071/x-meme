@@ -1,10 +1,15 @@
 package com.javaeeeee.dwstart;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.javaeeeee.dwstart.resources.DbClass;
 import com.javaeeeee.dwstart.resources.XmemeResource;
 import io.dropwizard.Application;
+import io.dropwizard.Configuration;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+
+import javax.validation.constraints.NotNull;
 
 public class DWGettingStartedApplication extends Application<DWGettingStartedConfiguration> {
 
@@ -20,6 +25,8 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
     @Override
     public void initialize(final Bootstrap<DWGettingStartedConfiguration> bootstrap) {
         // TODO: application initialization
+        bootstrap.addBundle(new AssetsBundle("/assets/index", "/index", "index.js"));
+        bootstrap.addBundle(new AssetsBundle("/assets/App.js", "/App", "App.js"));
     }
 
     @Override
@@ -31,6 +38,7 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
                 configuration.getCaption(),
                 configuration.getUrl()
         );
+        environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
         environment.jersey().register(resource);
     }
 

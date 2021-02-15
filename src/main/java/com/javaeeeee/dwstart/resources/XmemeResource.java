@@ -36,7 +36,7 @@ public class XmemeResource {
 
     @POST
     @Timed
-    public void postMeme(@QueryParam("name") String name, @QueryParam("name") String url, @QueryParam("name") String caption) {
+    public void postMeme(@QueryParam("name") String name, @QueryParam("url") String url, @QueryParam("caption") String caption) {
         dbClass.addMeme(new XmemeInfo(memeId.incrementAndGet(), new XmemeRequest(name, url, caption)));
     }
 }
