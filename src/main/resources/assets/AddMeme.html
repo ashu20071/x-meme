@@ -11,7 +11,7 @@
     />
     <link rel="apple-touch-icon" href="xmeme.png" />
     <link rel="manifest" href="manifest.json" />
-    <title>XMeme</title>
+    <title>Add Meme</title>
     <style>
     .App {
     text-align: center;
@@ -57,7 +57,12 @@
 }
   </style>
 
-    <script src="App.js"></script>
+    <script>
+        function myFunction() {
+            document.getElementById('my-form').action = "http://localhost:8080/memes";
+            alert("The form was submitted");
+        }
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/xmeme.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -78,6 +83,7 @@
     <header class="App-header">
         XMeme
     </header>
+
     <form id="my-form" onSubmit={myFunction}>
         <label class="label">Meme Owner</label><br/>
         <input type="text" id="meme-owner" class="text-input" placeholder="Enter your name" /><br/>
@@ -88,7 +94,7 @@
         <label class="label">Meme URL</label><br/>
         <input type="text" id="meme-url" class="text-input" placeholder="Enter Meme Url" /><br/>
 
-        <input type="submit" id="submit-meme" value="Post Meme" />
+        <input type="submit" id="submit-meme" onclick="myFunction()" value="Post Meme" />
     </form>
 
     <div id="meme-gallery">
