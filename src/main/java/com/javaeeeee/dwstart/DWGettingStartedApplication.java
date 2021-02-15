@@ -37,8 +37,8 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
                 configuration.getCaption(),
                 configuration.getUrl()
         );
-        environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
         environment.jersey().register(resource);
+        environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
     }
 
 }
