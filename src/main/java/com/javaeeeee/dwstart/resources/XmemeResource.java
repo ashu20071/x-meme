@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/memes")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class XmemeResource {
     DbClass dbClass = new DbClass();
     private final AtomicLong memeId;
@@ -25,6 +26,8 @@ public class XmemeResource {
 
     @GET
     @Timed
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
     public XmemeInfo getMeme(@QueryParam("id") Long id) {
         if (dbClass.getMemes().containsKey(id)) {
             return dbClass.getMemes().get(id);
@@ -36,7 +39,9 @@ public class XmemeResource {
 
     @POST
     @Timed
-    public void postMeme(@QueryParam("name") String name, @QueryParam("url") String url, @QueryParam("caption") String caption) {
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void postMeme(@QueryParam("xmemeName") String name, @QueryParam("xmemeUrl") String url, @QueryParam("xmemeCaption") String caption) {
         dbClass.addMeme(new XmemeInfo(memeId.incrementAndGet(), new XmemeRequest(name, url, caption)));
     }
 }
