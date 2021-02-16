@@ -7,7 +7,7 @@ public class DWGettingStartedConfiguration extends Configuration  {
 
 //    @Valid
 //    @NotNull
-    @JsonProperty
+//    @JsonProperty
 //    private final AssetsConfiguration assets = AssetsConfiguration.builder().build();
 
     //@NotEmpty

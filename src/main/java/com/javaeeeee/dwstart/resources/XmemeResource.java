@@ -13,9 +13,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class XmemeResource {
     DbClass dbClass = new DbClass();
     private final AtomicLong memeId;
-    private final String name;
-    private final String url;
-    private final String caption;
+    private  String name;
+    private  String url;
+    private  String caption;
 
     public XmemeResource(String name, String caption, String url) {
         this.memeId = new AtomicLong();
@@ -36,7 +36,7 @@ public class XmemeResource {
 //        dbClass.getMemes().put(newId, new XmemeInfo(newId, new XmemeRequest(name, url, caption)));
 
 
-        return Response.ok().entity(dbClass.builder().build()).build();
+        return Response.ok().entity(dbClass.getXMemes().values()).build();
 
     }
 
