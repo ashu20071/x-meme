@@ -6,7 +6,7 @@
     <title>Meme Stream</title>
     <script>
         fetch("/memes").then(function(response) {
-            return response.json();
+            return response;
         }).then(function(data) {
            appendData(data);
         }).catch(function() {
@@ -14,20 +14,18 @@
         });
         function appendData(data) {
             var table = document.createElement('table'), tr, td, row, cell;
-            for (row = 0; row < 10; row++) {
-                tr = document.createElement('tr');
-                td = document.createElement('td');
-                tr.appendChild(td);
-                var memeUrl = data.url;
-                td.outerHTML = "<img src="+memeUrl+">";
-                table.appendChild(tr);
-                tr = document.createElement('tr');
-                td = document.createElement('td');
-                tr.appendChild(td);
-                var memeCaption = data.caption;
-                td.outerHTML = "<div>Meme ID:"+data.memeId+"  Owner: "+data.name+"  Caption: "+memeCaption+"</div>";
-                table.appendChild(tr);
-            }
+            tr = document.createElement('tr');
+            td = document.createElement('td');
+            tr.appendChild(td);
+            var memeUrl = data.url;
+            td.outerHTML = "<img src="+url+">";
+            table.appendChild(tr);
+            tr = document.createElement('tr');
+            td = document.createElement('td');
+            tr.appendChild(td);
+            var memeCaption = data.caption;
+            td.outerHTML = "<div>Meme ID:"+data.memeId+"  Owner: "+data.name+"  Caption: "+caption+"</div>";
+            table.appendChild(tr);
             document.getElementById('container').appendChild(table);
         }
     </script>

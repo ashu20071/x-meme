@@ -70,6 +70,7 @@
                 // Define what happens on successful data submission
                 XHR.addEventListener("load", function (event) {
                     alert("Form Submitted" + event.target.responseText);
+                    window.location.assign('/html/LoadMemes.html');
                 });
 
                 // Define what happens in case of error
@@ -86,11 +87,11 @@
                     "xmemeUrl": document.querySelector('#xmemeUrl').value,
                     "xmemeCaption": document.querySelector('#xmemeCaption').value
                 }));
-                alert(JSON.stringify({
-                    "xmemeName": document.querySelector('#xmemeName').value,
-                    "xmemeUrl": document.querySelector('#xmemeUrl').value,
-                    "xmemeCaption": document.querySelector('#xmemeCaption').value
-                }));
+<!--                alert(JSON.stringify({-->
+<!--                    "xmemeName": document.querySelector('#xmemeName').value,-->
+<!--                    "xmemeUrl": document.querySelector('#xmemeUrl').value,-->
+<!--                    "xmemeCaption": document.querySelector('#xmemeCaption').value-->
+<!--                }));-->
             }
 
             // Access the form element...
@@ -102,6 +103,7 @@
                 sendData();
             });
         });
+
     </script>
 </head>
 
