@@ -62,7 +62,9 @@
     <script>
         function myFunction() {
             alert("The form was submitted");
-            document.getElementById('my-form').action = "http://localhost:8080/memes";
+            alert(document.getElementById("myform").name.value);
+
+            document.getElementById('myform').action = "http://localhost:8080/memes";
         }
     </script>
 </head>
@@ -74,15 +76,15 @@
         XMeme
     </header>
 
-    <form id="my-form" onsubmit={myFunction()}>
+    <form id="myform" onsubmit={myFunction()}>
         <label for="meme-owner" class="label">Meme Owner</label><br/>
-        <input type="text" id="meme-owner" class="text-input" placeholder="Enter your name" /><br/>
+        <input type="text" id="meme-owner" name="name" class="text-input" placeholder="Enter your name" /><br/>
 
         <label for="meme-caption" class="label">Caption</label><br/>
-        <input type="text" id="meme-caption" class="text-input" placeholder="Be creative with caption"/><br/>
+        <input type="text" id="meme-caption" name="caption" class="text-input" placeholder="Be creative with caption"/><br/>
 
         <label for="meme-url" class="label">Meme URL</label><br/>
-        <input type="text" id="meme-url" class="text-input" placeholder="Enter Meme Url" /><br/>
+        <input type="text" id="meme-url" name="url" class="text-input" placeholder="Enter Meme Url" /><br/>
 
         <input type="submit" id="submit-meme" value="Post Meme" />
     </form>
