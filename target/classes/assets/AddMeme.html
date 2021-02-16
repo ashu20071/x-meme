@@ -60,43 +60,53 @@
     </style>
 
     <script>
-        window.addEventListener( "load", function () {
+        window.addEventListener("load", function () {
             function sendData() {
                 const XHR = new XMLHttpRequest();
-                XHR.open( "POST", "/memes" );
-                const params = {
-                    "xmemeName": document.querySelector('#xmemeName').value,
-                    "xmemeUrl": document.querySelector('#xmemeUrl').value,
-                    "xmemeCaption": document.querySelector('#xmemeCaption').value
-                }
+                XHR.open("POST", "/memes?"+ "xmemeName="+document.querySelector('#xmemeName').value+"&"
+                    + "xmemeUrl="+document.querySelector('#xmemeUrl').value+"&"
+                    + "xmemeCaption="+document.querySelector('#xmemeCaption').value
+                );
+                    // "xmemeUrl": document.querySelector('#xmemeUrl').value,
+                    // "xmemeCaption": document.querySelector('#xmemeCaption').value);
+
                 // Define what happens on successful data submission
-                XHR.addEventListener( "load", function(event) {
-                    alert( "haha"+ event.target.responseText );
-                } );
+                XHR.addEventListener("load", function (event) {
+                    alert("haha" + event.target.responseText);
+                });
 
                 // Define what happens in case of error
-                XHR.addEventListener( "error", function( event ) {
-                    alert( 'Oops! Something went wrong.' );
-                } );
+                XHR.addEventListener("error", function (event) {
+                    alert('Oops! Something went wrong.');
+                });
 
+                // XHR.
 
                 // Set up our requestMediaType.APPLICATION_FORM_URLENCODED
                 XHR.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
                 // The data sent is what the user provided in the form
-                XHR.send( JSON.stringify(params) );
-                alert(JSON.stringify(params));
+                XHR.send(JSON.stringify({
+                    "xmemeName": document.querySelector('#xmemeName').value,
+                    "xmemeUrl": document.querySelector('#xmemeUrl').value,
+                    "xmemeCaption": document.querySelector('#xmemeCaption').value
+                }));
+                alert(JSON.stringify({
+                    "xmemeName": document.querySelector('#xmemeName').value,
+                    "xmemeUrl": document.querySelector('#xmemeUrl').value,
+                    "xmemeCaption": document.querySelector('#xmemeCaption').value
+                }));
             }
 
             // Access the form element...
-            const form = document.getElementById( "myForm" );
+            const form = document.getElementById("myForm");
 
             // ...and take over its submit event.
-            form.addEventListener( "submit", function ( event ) {
+            form.addEventListener("submit", function (event) {
                 event.preventDefault();
 
                 sendData();
-            } );
-        } );
+            });
+        });
     </script>
 </head>
 
