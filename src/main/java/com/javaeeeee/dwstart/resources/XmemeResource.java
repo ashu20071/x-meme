@@ -1,6 +1,7 @@
 package com.javaeeeee.dwstart.resources;
 
 import com.codahale.metrics.annotation.Timed;
+import org.json.JSONObject;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -33,10 +34,8 @@ public class XmemeResource {
             return  Response.ok().entity(dbClass.getMemes().get(id)).build();
         }
 //        long newId = memeId.incrementAndGet();
-//        dbClass.getMemes().put(newId, new XmemeInfo(newId, new XmemeRequest(name, url, caption)));
-
-
-        return Response.ok().entity(dbClass.getXMemes().values()).build();
+//        dbClass.getMemes().put(newId, new XmemeInfo(newId, new XmemeRequest(name, url, caption)))
+          return Response.ok().entity(dbClass.getXMemes().values()).build();
 
     }
 

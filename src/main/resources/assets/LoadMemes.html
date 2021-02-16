@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="xmeme.png" />
+    <link rel="icon" href="/xmeme.png" />
     <title>Meme Stream</title>
     <script>
         fetch("/memes").then(function(response) {
-            return response;
+            return response.json();
         }).then(function(data) {
-           appendData(data);
+            appendData(data);
         }).catch(function() {
             console.log("Something went wrong");
         });
         function appendData(data) {
-            var table = document.createElement('table'), tr, td, row, cell;
-            tr = document.createElement('tr');
-            td = document.createElement('td');
-            tr.appendChild(td);
-            var memeUrl = data.url;
-            td.outerHTML = "<img src="+url+">";
-            table.appendChild(tr);
-            tr = document.createElement('tr');
-            td = document.createElement('td');
-            tr.appendChild(td);
-            var memeCaption = data.caption;
-            td.outerHTML = "<div>Meme ID:"+data.memeId+"  Owner: "+data.name+"  Caption: "+caption+"</div>";
-            table.appendChild(tr);
-            document.getElementById('container').appendChild(table);
+            for (var i = 0; i < Object.keys(data).length; i++) {
+                var table = document.createElement('table'), tr, td, row, cell;
+                tr = document.createElement('tr');
+                td = document.createElement('td');
+                tr.appendChild(td);
+                td.outerHTML = "<img src="+data[i].url+">";
+                table.appendChild(tr);
+                tr = document.createElement('tr');
+                td = document.createElement('td');
+                tr.appendChild(td);
+                td.outerHTML = "<div>Meme ID:"+data[i].memeId+"  Owner: "+data[i].name+"  Caption: "+data[i].caption+"</div>";
+                table.appendChild(tr);
+                document.getElementById('container').appendChild(table);
+            }
         }
     </script>
 </head>
