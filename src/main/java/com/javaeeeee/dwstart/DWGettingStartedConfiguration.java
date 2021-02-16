@@ -11,42 +11,42 @@ public class DWGettingStartedConfiguration extends Configuration  {
 //    private final AssetsConfiguration assets = AssetsConfiguration.builder().build();
 
     //@NotEmpty
-    private String name ="Some User";
+    private String xmemeName ="Some User";
 
     //@NotEmpty
-    private String caption = "Some Caption";
+    private String xmemeCaption = "Some Caption";
 
     //@NotEmpty
-    private String url = "Some URL";
+    private String xmemeUrl = "https://upload.wikimedia.org/wikipedia/en/a/ad/X_cover.png";
 
     @JsonProperty
-    public String getUrl() {
-        return url;
+    public String getXmemeUrl() {
+        return xmemeUrl;
     }
 
     @JsonProperty
-    public void setUrl(String url) {
-        this.url = url;
+    public void setXmemeUrl(String xmemeUrl) {
+        this.xmemeUrl = xmemeUrl;
     }
 
     @JsonProperty
-    public String getName() {
-        return name;
+    public String getXmemeName() {
+        return xmemeName;
     }
 
     @JsonProperty
-    public void setName(String name) {
-        this.name = name;
+    public void setXmemeName(String xmemeName) {
+        this.xmemeName = xmemeName;
     }
 
     @JsonProperty
-    public String getCaption() {
-        return caption;
+    public String getXmemeCaption() {
+        return xmemeCaption;
     }
 
     @JsonProperty
-    public void setCaption(String caption) {
-        this.caption = caption;
+    public void setXmemeCaption(String xmemeCaption) {
+        this.xmemeCaption = xmemeCaption;
     }
 
 //    @Override

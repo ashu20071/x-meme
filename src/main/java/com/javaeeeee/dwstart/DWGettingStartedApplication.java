@@ -31,9 +31,9 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
                     final Environment environment) {
         // TODO: implement application
         final XmemeResource resource = new XmemeResource(
-                configuration.getName(),
-                configuration.getCaption(),
-                configuration.getUrl()
+                configuration.getXmemeName(),
+                configuration.getXmemeCaption(),
+                configuration.getXmemeUrl()
         );
         environment.jersey().register(resource);
         //environment.jersey().setUrlPattern("/memes/http://localhost:8080/");
