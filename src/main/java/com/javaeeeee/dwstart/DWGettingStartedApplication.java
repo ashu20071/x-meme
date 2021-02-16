@@ -1,15 +1,10 @@
 package com.javaeeeee.dwstart;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.javaeeeee.dwstart.resources.DbClass;
 import com.javaeeeee.dwstart.resources.XmemeResource;
 import io.dropwizard.Application;
-import io.dropwizard.Configuration;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-
-import javax.validation.constraints.NotNull;
 
 public class DWGettingStartedApplication extends Application<DWGettingStartedConfiguration> {
 
@@ -25,7 +20,9 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
     @Override
     public void initialize(final Bootstrap<DWGettingStartedConfiguration> bootstrap) {
         // TODO: application initialization
-        //bootstrap.addBundle(new AssetsBundle("/assets", "/", "index.html"));
+        bootstrap.addBundle(new AssetsBundle("/assets", "/html", "index.html","html"));
+//        bootstrap.addBundle(new AssetsBundle("/assets", "/loadmemes", "LoadMemes.html"));
+//        bootstrap.addBundle(new AssetsBundle("/assets", "/addmeme", "AddMeme.html"));
 
     }
 
