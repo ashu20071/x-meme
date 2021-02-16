@@ -1,16 +1,10 @@
 package com.javaeeeee.dwstart.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.POST;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Response;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.Optional;
+import javax.ws.rs.core.Response;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Path("/memes")
@@ -34,13 +28,16 @@ public class XmemeResource {
     @Timed
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public XmemeInfo getMeme(@QueryParam("id") Long id) {
+    public Response getMeme(@QueryParam("id") Long id) {
         if (dbClass.getMemes().containsKey(id)) {
-            return dbClass.getMemes().get(id);
+            return  Response.ok().entity(dbClass.getMemes().get(id)).build();
         }
-        long newId = memeId.incrementAndGet();
-        dbClass.getMemes().put(newId, new XmemeInfo(newId, new XmemeRequest(name, url, caption)));
-        return dbClass.getMemes().get(newId);
+//        long newId = memeId.incrementAndGet();
+//        dbClass.getMemes().put(newId, new XmemeInfo(newId, new XmemeRequest(name, url, caption)));
+
+
+        return Response.ok().entity(dbClass.builder().build()).build();
+
     }
 
     @POST
