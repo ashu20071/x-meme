@@ -10,18 +10,22 @@
         }).then(function(data) {
            appendData(data);
         }).catch(function() {
-            console.log("Booo");
+            console.log("Something went wrong");
         });
         function appendData(data) {
             var table = document.createElement('table'), tr, td, row, cell;
             for (row = 0; row < 10; row++) {
                 tr = document.createElement('tr');
-                for (cell = 0; cell < 3; cell++) {
-                    td = document.createElement('td');
-                    tr.appendChild(td);
-                    var uurl = data.xmemeUrl;
-                    td.outerHTML = "<img src="+uurl+">";
-                }
+                td = document.createElement('td');
+                tr.appendChild(td);
+                var memeUrl = data.url;
+                td.outerHTML = "<img src="+memeUrl+">";
+                table.appendChild(tr);
+                tr = document.createElement('tr');
+                td = document.createElement('td');
+                tr.appendChild(td);
+                var memeCaption = data.caption;
+                td.outerHTML = "<div>Meme ID:"+data.memeId+"  Owner: "+data.name+"  Caption: "+memeCaption+"</div>";
                 table.appendChild(tr);
             }
             document.getElementById('container').appendChild(table);
@@ -29,7 +33,7 @@
     </script>
 </head>
 <body>
-    <div id="container">
+    <div id="container" align="center">
 
     </div>
 </body>

@@ -67,12 +67,9 @@
                     + "xmemeUrl="+document.querySelector('#xmemeUrl').value+"&"
                     + "xmemeCaption="+document.querySelector('#xmemeCaption').value
                 );
-                    // "xmemeUrl": document.querySelector('#xmemeUrl').value,
-                    // "xmemeCaption": document.querySelector('#xmemeCaption').value);
-
                 // Define what happens on successful data submission
                 XHR.addEventListener("load", function (event) {
-                    alert("haha" + event.target.responseText);
+                    alert("Form Submitted" + event.target.responseText);
                 });
 
                 // Define what happens in case of error
@@ -80,10 +77,9 @@
                     alert('Oops! Something went wrong.');
                 });
 
-                // XHR.
-
                 // Set up our requestMediaType.APPLICATION_FORM_URLENCODED
                 XHR.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
                 // The data sent is what the user provided in the form
                 XHR.send(JSON.stringify({
                     "xmemeName": document.querySelector('#xmemeName').value,
@@ -103,7 +99,6 @@
             // ...and take over its submit event.
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
-
                 sendData();
             });
         });
@@ -117,10 +112,16 @@
         XMeme
     </header>
     <form id="myForm">
-        <input id="xmemeName" name="xmemeName" value="xmemeUrl">
-        <input id="xmemeUrl" name="xmemeUrl" value="xmemeUrl">
-        <input id="xmemeCaption" name="xmemeCaption" value="xmemeCaption">
-        <input type="submit" value="Send Me!">
+        <label for="xmemeName" class="label">Meme Owner</label><br/>
+        <input type="text" id="xmemeName" name="xmemeName" class="text-input" placeholder="Enter your name" /><br/>
+
+        <label for="xmemeCaption" class="label">Caption</label><br/>
+        <input type="text" id="xmemeCaption" name="xmemeCaption" class="text-input" placeholder="Be creative with caption"/><br/>
+
+        <label for="xmemeUrl" class="label">Meme URL</label><br/>
+        <input type="text" id="xmemeUrl" name="xmemeUrl" class="text-input" placeholder="Enter Meme Url" /><br/>
+
+        <input type="submit"  id="submit-meme" value="Post Meme" />
     </form>
 </div>
 
