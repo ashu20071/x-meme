@@ -39,7 +39,7 @@ public class XmemeResource {
 
     @POST
     @Timed
-    @Produces(MediaType.APPLICATION_JSON)
+//    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public void postMeme(@QueryParam("xmemeName") String name, @QueryParam("xmemeUrl") String url, @QueryParam("xmemeCaption") String caption) {
         dbClass.addMeme(new XmemeInfo(memeId.incrementAndGet(), new XmemeRequest(name, url, caption)));
