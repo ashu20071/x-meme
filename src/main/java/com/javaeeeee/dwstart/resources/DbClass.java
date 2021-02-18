@@ -1,7 +1,5 @@
 package com.javaeeeee.dwstart.resources;
 
-
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

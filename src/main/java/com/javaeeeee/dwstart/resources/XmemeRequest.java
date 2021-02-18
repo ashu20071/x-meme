@@ -15,6 +15,4 @@ public class XmemeRequest {
     public XmemeRequest() {
         // Jackson deserialization
     }
-
-
 }

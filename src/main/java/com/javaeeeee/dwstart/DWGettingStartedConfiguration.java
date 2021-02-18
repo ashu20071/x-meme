@@ -3,20 +3,16 @@ package com.javaeeeee.dwstart;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
 
+import javax.validation.constraints.NotEmpty;
+
 public class DWGettingStartedConfiguration extends Configuration  {
-
-//    @Valid
-//    @NotNull
-//    @JsonProperty
-//    private final AssetsConfiguration assets = AssetsConfiguration.builder().build();
-
-    //@NotEmpty
+    @NotEmpty
     private String xmemeName ="Some User";
 
-    //@NotEmpty
+    @NotEmpty
     private String xmemeCaption = "Some Caption";
 
-    //@NotEmpty
+    @NotEmpty
     private String xmemeUrl = "https://upload.wikimedia.org/wikipedia/en/a/ad/X_cover.png";
 
     @JsonProperty
@@ -49,8 +45,4 @@ public class DWGettingStartedConfiguration extends Configuration  {
         this.xmemeCaption = xmemeCaption;
     }
 
-//    @Override
-//    public AssetsConfiguration getAssetsConfiguration() {
-//        return assets;
-//    }
 }

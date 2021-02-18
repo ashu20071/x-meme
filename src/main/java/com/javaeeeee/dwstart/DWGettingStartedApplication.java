@@ -1,7 +1,5 @@
 package com.javaeeeee.dwstart;
 
-import com.javaeeeee.dwstart.resources.DbClass;
-import com.javaeeeee.dwstart.resources.XmemeInfo;
 import com.javaeeeee.dwstart.resources.XmemeResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
