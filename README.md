@@ -1,6 +1,7 @@
-# DWGettingStarted
+Summary/Overview:
+**Meme Stream Application where users can post memes by providing their name, a caption for the meme and the URL for the meme image as input. The page retrieves and displays the latest 100 posted Memes.**
 
-How to start the DWGettingStarted application
+How to start the DropWizard application
 ---
 
 1. Run `mvn clean install` to build your application
