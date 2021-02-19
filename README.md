@@ -4,7 +4,9 @@ Meme Stream Application where users can post memes by providing their name, a ca
 
 This is not a meme generator, but a simple app to pull created memes using their URL and listing them on this page with the user’s name and caption.
 
-!system design(https://github.com/ashu20071/x-meme/XMEME_MODULE_BASIC_image_1.png?raw=true)
+Design
+---
+![](https://github.com/ashu20071/x-meme/blob/master/XMEME_MODULE_BASIC_image_1.png)
 
 
 How to start the DropWizard application
