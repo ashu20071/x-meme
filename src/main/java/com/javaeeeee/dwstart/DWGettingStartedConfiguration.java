@@ -13,7 +13,7 @@ public class DWGettingStartedConfiguration extends Configuration  {
     private String xmemeCaption = "Some Caption";
 
     @NotEmpty
-    private String xmemeUrl = "https://upload.wikimedia.org/wikipedia/en/a/ad/X_cover.png";
+    private String xmemeUrl = "xmeme.png";
 
     @JsonProperty
     public String getXmemeUrl() {

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DWGettingStarted.iml" filepath="$PROJECT_DIR$/DWGettingStarted.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DropwizardMySQL.iml" filepath="$PROJECT_DIR$/DropwizardMySQL.iml" />
     </modules>
   </component>
 </project>

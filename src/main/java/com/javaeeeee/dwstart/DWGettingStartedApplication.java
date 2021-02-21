@@ -20,20 +20,20 @@ public class DWGettingStartedApplication extends Application<DWGettingStartedCon
 
     @Override
     public void initialize(final Bootstrap<DWGettingStartedConfiguration> bootstrap) {
-        // TODO: application initialization
         bootstrap.addBundle(new AssetsBundle("/assets", "/html", "index.html","html"));
     }
 
     @Override
     public void run(final DWGettingStartedConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
 
         final XmemeResource resource = new XmemeResource(
                 configuration.getXmemeName(),
                 configuration.getXmemeCaption(),
                 configuration.getXmemeUrl()
         );
+
         environment.jersey().register(resource);
+        environment.healthChecks().register("DWGettingStartedHealthCheck", new DWGettingStartedHealthCheck(configuration));
     }
 }
