@@ -1,43 +1,55 @@
 package com.javaeeeee.dwstart.resources;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class XmemeInfo {
-    private final long memeId;
-    private String name;
-    private String url;
-    private String caption;
+    @JsonProperty
+    private long xmemeId;
+    @JsonProperty
+    private String xmemeName;
+    @JsonProperty
+    private String xmemeCaption;
+    @JsonProperty
+    private String xmemeUrl;
 
-    public XmemeInfo(long memeId, XmemeRequest xmemeRequest) {
-        this.memeId = memeId;
-        this.name = xmemeRequest.getName();
-        this.url = xmemeRequest.getUrl();
-        this.caption = xmemeRequest.getCaption();
+    public XmemeInfo() {
+        super();
     }
 
-    public long getMemeId() {
-        return memeId;
+    public XmemeInfo(String xmemeName, String xmemeCaption, String xmemeUrl) {
+        super();
+        this.xmemeName = xmemeName;
+        this.xmemeUrl = xmemeUrl;
+        this.xmemeCaption = xmemeCaption;
     }
 
-    public String getName() {
-        return name;
+    public long getXmemeId() {
+        return xmemeId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setXmemeId(long xmemeId) {this.xmemeId = xmemeId; }
+
+    public String getXmemeName() {
+        return xmemeName;
     }
 
-    public String getUrl() {
-        return url;
+    public void setXmemeName(String xmemeName) {
+        this.xmemeName = xmemeName;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public String getXmemeUrl() {
+        return xmemeUrl;
     }
 
-    public String getCaption() {
-        return caption;
+    public void setXmemeUrl(String xmemeUrl) {
+        this.xmemeUrl = xmemeUrl;
     }
 
-    public void setCaption(String caption) {
-        this.caption = caption;
+    public String getXmemeCaption() {
+        return xmemeCaption;
+    }
+
+    public void setXmemeCaption(String xmemeCaption) {
+        this.xmemeCaption = xmemeCaption;
     }
 }

@@ -2,47 +2,26 @@ package com.javaeeeee.dwstart;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class DWGettingStartedConfiguration extends Configuration  {
-    @NotEmpty
-    private String xmemeName ="Some User";
 
-    @NotEmpty
-    private String xmemeCaption = "Some Caption";
+    private static final String DATABASE = "database";
+    @Valid
+    @NotNull
+    private DataSourceFactory dataSourceFactory = new DataSourceFactory();
 
-    @NotEmpty
-    private String xmemeUrl = "xmeme.png";
-
-    @JsonProperty
-    public String getXmemeUrl() {
-        return xmemeUrl;
+    @JsonProperty(DATABASE)
+    public DataSourceFactory getDataSourceFactory() {
+        return dataSourceFactory;
     }
 
-    @JsonProperty
-    public void setXmemeUrl(String xmemeUrl) {
-        this.xmemeUrl = xmemeUrl;
-    }
-
-    @JsonProperty
-    public String getXmemeName() {
-        return xmemeName;
-    }
-
-    @JsonProperty
-    public void setXmemeName(String xmemeName) {
-        this.xmemeName = xmemeName;
-    }
-
-    @JsonProperty
-    public String getXmemeCaption() {
-        return xmemeCaption;
-    }
-
-    @JsonProperty
-    public void setXmemeCaption(String xmemeCaption) {
-        this.xmemeCaption = xmemeCaption;
+    @JsonProperty(DATABASE)
+    public void setDataSourceFactory(final DataSourceFactory dataSourceFactory) {
+        this.dataSourceFactory = dataSourceFactory;
     }
 
 }

@@ -1,19 +1,27 @@
 package com.javaeeeee.dwstart;
 
 import com.codahale.metrics.health.HealthCheck;
+import com.javaeeeee.dwstart.resources.XmemeService;
 
 public class DWGettingStartedHealthCheck extends HealthCheck {
 
-    private final String xmemeUrl;
+    private static final String HEALTHY_MESSAGE = "The Dropwizard blog Service is healthy for read and write";
+    private static final String UNHEALTHY_MESSAGE = "The Dropwizard blog Service is not healthy. ";
 
-    public DWGettingStartedHealthCheck(DWGettingStartedConfiguration dwGettingStartedConfiguration) {
-        this.xmemeUrl = dwGettingStartedConfiguration.getXmemeUrl();
+    private final XmemeService xmemeService;
+
+    public DWGettingStartedHealthCheck(XmemeService xmemeService) {
+        this.xmemeService = xmemeService;
     }
 
     @Override
-    protected Result check() throws Exception {
-        if (!xmemeUrl.equals("xmeme.png"))
-            return Result.unhealthy("URL is incorrect");
-        return Result.healthy();
+    public Result check() {
+        String mySqlHealthStatus = xmemeService.performHealthCheck();
+
+        if (mySqlHealthStatus == null)
+            return Result.healthy(HEALTHY_MESSAGE);
+        else
+            return Result.unhealthy(UNHEALTHY_MESSAGE , mySqlHealthStatus);
     }
+
 }

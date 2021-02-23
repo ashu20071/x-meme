@@ -1,6 +1,8 @@
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/resources/XmemeResource.java
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/resources/XmemeInfo.java
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/resources/DbClass.java
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/DWGettingStartedConfiguration.java
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/DWGettingStartedApplication.java
-/Users/ajaysingh/IdeaProjects/DWGettingStarted/src/main/java/com/javaeeeee/dwstart/resources/XmemeRequest.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\DWGettingStartedConfiguration.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\resources\XmemeDao.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\DWGettingStartedHealthCheck.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\resources\XmemeResource.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\resources\XmemeMapper.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\resources\XmemeInfo.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\resources\XmemeService.java
+C:\Users\dinesh\IdeaProjects\xmeme-test\src\main\java\com\javaeeeee\dwstart\DWGettingStartedApplication.java

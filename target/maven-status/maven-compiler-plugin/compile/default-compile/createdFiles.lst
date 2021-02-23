@@ -1,7 +1,8 @@
-com/javaeeeee/dwstart/resources/XmemeResource.class
-com/javaeeeee/dwstart/resources/XmemeInfo.class
-com/javaeeeee/dwstart/resources/XmemeRequest.class
-com/javaeeeee/dwstart/DWGettingStartedConfiguration.class
-com/javaeeeee/dwstart/DWGettingStartedApplication.class
-com/javaeeeee/dwstart/resources/DbClass.class
-com/javaeeeee/dwstart/resources/DbClass$DbClassBuilder.class
+com\javaeeeee\dwstart\resources\XmemeResource.class
+com\javaeeeee\dwstart\resources\XmemeMapper.class
+com\javaeeeee\dwstart\DWGettingStartedHealthCheck.class
+com\javaeeeee\dwstart\resources\XmemeDao.class
+com\javaeeeee\dwstart\resources\XmemeInfo.class
+com\javaeeeee\dwstart\DWGettingStartedConfiguration.class
+com\javaeeeee\dwstart\DWGettingStartedApplication.class
+com\javaeeeee\dwstart\resources\XmemeService.class

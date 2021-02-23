@@ -68,13 +68,13 @@
                 td = document.createElement('td');
                 tr.appendChild(td);
                 var imgClass = "imgClass";
-                td.outerHTML = "<img class="+imgClass+" src="+data[i].url+">";
+                td.outerHTML = "<img class="+imgClass+" src="+data[i].xmemeUrl+">";
                 table.appendChild(tr);
                 tr = document.createElement('tr');
                 td = document.createElement('td');
                 tr.appendChild(td);
                 tr.className = "captions";
-                td.outerHTML = "<div>Meme ID:"+data[i].memeId+"  Owner: "+data[i].name+"  Caption: "+data[i].caption+"</div>";
+                td.outerHTML = "<div>Meme ID:"+data[i].xmemeId+"  Owner: "+data[i].xmemeName+"  Caption: "+data[i].xmemeCaption+"</div>";
                 table.appendChild(tr);
                 document.getElementById('container').appendChild(table);
             }
@@ -87,7 +87,7 @@
     </script>
 </head>
 
-<body bgcolor="whitesmoke">
+<body>
     <div id="page-head">
         <button id="add-meme" class="button" onclick="window.location.href='/html/AddMeme.html'">Add Meme</button>
         <button id="get-meme" class="button" onclick={getMeme()}>Get Meme</button>

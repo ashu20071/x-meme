@@ -865,7 +865,8 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:9.0.41" level="project" />
     <orderEntry type="library" name="Maven: org.jdbi:jdbi:2.78" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-jdbi:4.1.17" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:6.0.6" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.16" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.wordnik:swagger-annotations:1.5.3-M1" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard:dropwizard-core:2.0.19" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard:dropwizard-util:2.0.19" level="project" />
