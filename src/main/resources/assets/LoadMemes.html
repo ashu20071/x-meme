@@ -22,7 +22,6 @@
             color: darkslategray
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             position: relative;
-            position: relative;
         }
 
         .captions {
@@ -82,8 +81,30 @@
 
         function getMeme() {
             var memeId = prompt("Please enter meme ID");
-            
+            fetch("/memes?id="+memeId).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                if (data.code == '404') {
+                    alert("Incorrect ID");
+                    window.reload();
+                }
+                else {
+                    var myWindow = window.open("", "_self");
+                    const imgClass = "imgClass";
+                    const caption = "captions";
+                    const cName = "meme-table";
+                    const buttonClass = "button";
+                    const clickAction = "window.location.assign('/html/LoadMemes.html')";
+                    myWindow.document.write("<div class="+cName+"> <button class="+buttonClass+
+                        " onclick="+clickAction+">Back</button><br /><img class="+imgClass+" src="+data.xmemeUrl+
+                        "><div class="+caption+">Meme ID:"+data.xmemeId+
+                        " Owner: "+data.xmemeName+"  Caption: "+data.xmemeCaption+"</div></div>");
+                }
+            }).catch(function() {
+                console.log("Something went wrong");
+            });
         }
+
     </script>
 </head>
 
