@@ -62,10 +62,8 @@
         window.addEventListener("load", function () {
             function sendData() {
                 const XHR = new XMLHttpRequest();
-                XHR.open("POST", "/memes?"+ "xmemeName="+document.querySelector('#xmemeName').value+"&"
-                    + "xmemeUrl="+document.querySelector('#xmemeUrl').value+"&"
-                    + "xmemeCaption="+document.querySelector('#xmemeCaption').value
-                );
+                XHR.open("POST", "/memes");
+                
                 // Define what happens on successful data submission
                 XHR.addEventListener("load", function (event) {
                     alert("Form Submitted" + event.target.responseText);
